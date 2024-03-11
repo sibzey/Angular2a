@@ -1,1 +1,8 @@
-<p>form works!</p>
+<div style="margin: 20px;padding: 10px; border: solid orange 5px; text-align: center;">
+<p style="letter-spacing: 2px; background-color: rgb(204, 172, 234); ">Form Component</p>
+<input type="text" [(ngModel)]="username" />
+<p>{{ username }}</p>
+<button  class="btn btn-primary" (click)="writeToConsole()">Konsol'a Yaz</button>
+<button style="margin: 10px;" class="btn btn-secondary" (click)="changeFromTs()"> Değiştir</button>
+<!-- Two Way Data Binding -->
+</div>
