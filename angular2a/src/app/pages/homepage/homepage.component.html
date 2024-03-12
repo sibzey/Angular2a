@@ -1,1 +1,8 @@
-<p>homepage works!</p>
+<div class="container mt-5">
+    <ul *ngIf="todoList.length > 0">
+      <li *ngFor="let item of todoList">
+        {{ item.title }} 
+      </li>
+    </ul>
+    <p *ngIf="todoList.length <= 0">Yükleniyor...</p>
+  </div>
