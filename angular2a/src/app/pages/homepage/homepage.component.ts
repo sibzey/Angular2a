@@ -1,17 +1,21 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, formatDate } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ToDo } from '../../models/toDo';
+import { FormsModule } from '@angular/forms';
+import { FilterTodolistPipe } from "../../pipes/filter-todolist.pipe";
 
 @Component({
-  standalone: true,
-  imports: [CommonModule, HttpClientModule],
-  templateUrl: './homepage.component.html',
-  styleUrl: './homepage.component.scss'
+    standalone: true,
+    templateUrl: './homepage.component.html',
+    styleUrl: './homepage.component.scss',
+    imports: [CommonModule, HttpClientModule, FormsModule, FilterTodolistPipe]
 })
 export class HomepageComponent implements OnInit {
 
   todoList: ToDo[] = [];
+  today: Date = new Date();
+  searchKey: string = '';
 
   constructor(private httpClient: HttpClient) {}
 
@@ -41,4 +45,10 @@ export class HomepageComponent implements OnInit {
     let obj = {};
     this.httpClient.post('link', obj).subscribe();
   }
-}
+
+  //today:Date= new Date();
+  formatDate(date:Date){
+    return date.toISOString();
+  }
+} 
+
