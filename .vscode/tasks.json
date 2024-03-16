@@ -1,0 +1,26 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "build",
+			"path": "angular2a",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: build - angular2a",
+			"detail": "ng build"
+		},
+		{
+			"type": "npm",
+			"script": "ng",
+			"path": "angular2a",
+			"problemMatcher": [],
+			"label": "npm: ng - angular2a",
+			"detail": "ng",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}
